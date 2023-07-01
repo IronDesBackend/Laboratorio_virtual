@@ -1,0 +1,107 @@
+* {
+    margin:inherit;
+    padding:0;
+    outline: 0;
+}
+
+button {
+    display: inline-block;
+    width: 20%;
+    font-size: x-large;
+    margin-top: 10px;
+}
+
+h1 {
+    font-size: 600%;
+}
+
+h3 {
+    font-size: 300%;
+}
+
+img {
+    margin: 0;
+}
+
+.inputs {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: large;
+    width: 35%;
+    text-align: center;
+    border: solid 2px;
+}
+
+label {
+    margin-right: 0;
+    margin-left: 0;
+    font-weight: 600;
+}
+
+html {
+    background-color: #303036 ;
+    text-align: center;
+}
+
+#fir_box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: #FFFAFF;
+    margin: 60px;
+    border: solid black 5px; */
+}
+
+#main_paci {
+    background-color: #30BCED ;
+}
+
+#main_doctor {
+    background-color: #FFFAFF ;
+}
+
+#main_admin {
+    background-color: #00A878 ;
+}
+
+.caja {
+    margin: 25px;
+}
+
+.caja_index {
+    border-style: solid;
+    border-width: 5px;
+    border-color: #515158;
+    margin: 30px;
+}
+
+.fir_enun {
+    color: #FFFAFF;
+    margin: 25px;
+    margin-bottom: 0;
+}
+
+
+.paciente {
+    background-color: #30BCED;
+    text-align: center;
+    font-size: x-large;
+    border: solid #515158;
+    border-width: 5px;
+    margin: 50px;
+    display: inline-block;
+    width: 60%;
+}
+
+.doctor {
+    background-color: #FFFAFF;
+    text-align: center;
+    font-size: x-large;
+    border: solid #515158;
+    border-width: 5px;
+    margin: 50px;
+    display: inline-block;
+    width: 60%;
+}
+

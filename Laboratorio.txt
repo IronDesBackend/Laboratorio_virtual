@@ -1,0 +1,28 @@
+Instrucciones de la actividad
+
+Aplicando lo visto en el curso hasta el momento realizar la siguiente práctica.
+
+
+Realizar un aplicativo web, que por medio de formularios reciba la información de pacientes y doctores, los almacene en JSON y luego con DOM los muestre en una página.
+
+_______________________________________________________________________
+
+2. Genere una función que valide los campos del formulario por medio de expresiones regulares y el DOM.
+
+______________________________________________________________________
+
+4. La información capturada en los formularios se debe almacenar en un Objeto que luego se pase a un JSON y guarde el archivo JSON.
+
+5. Debe haber una página que muestre el listado de pacientes con su información personal (leer el JSON de pacientes, utilizar DOM para desplegar la información en la página)
+
+6. Debe haber una página que muestra el listado de doctores  con su información (leer el JSON de pacientes, utilizar DOM para desplegar la información en la página).
+
+7. Los archivos HTML, CSS y JavaScript deben estar separados.
+
+8. Subir el aplicativo a un repositorio Github.
+
+
+__________________________________________________________________________
+30BCED-303036-FFFAFF-00A878 ===> Primera paleta -->ponlo a modo de barra
+03B5AA-037971-023436-FAFFD8 ==> Segunda paleta
+CCDAD1-9CAEA9-788585-0C1B33 ==> Tercera paleta
