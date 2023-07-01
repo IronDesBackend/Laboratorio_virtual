@@ -1,4 +1,4 @@
-Hola profe, mi problema es que para validar los campos modifico con DOM el backgroundColor y el border de los inputs para que se vean en rojo, luego de eso se quedan en rojo 4 de los campos.
+Hola profe, mi problema es que para validar los campos modifico con DOM el backgroundColor y el border de los inputs para que se vean en rojo, luego de eso se quedan en rojo 4 de los campos. El formulario que estoy trabajando es formulario_pa.html y el codigo se llama scripts_paciente, para mayor facilidad, esta en la raiz como "Validación-HELP profe" jaja
 
 1. La idea es que los inputs vuelvan a quedar blancos luego de mandar la información
 
