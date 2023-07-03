@@ -4,7 +4,7 @@ const boton = document.getElementById("boton");
 boton.addEventListener("click", (e) => {
     e.preventDefault();
     validarDoctor();
-    // enviarD();
+    enviarD();
 });
 
 //Variables del Doctor
@@ -23,7 +23,7 @@ const valLname = /^[A-Za-zÑñÁáÉéÍíÓóÚú]+\s*?[A-Za-zÑñÁáÉéÍí�
 const valCedula = /^\d$/g;
 const valCorreo = /^\S+@\S+\.\S+$/;
 const valConsultorio = /^(\d{3})$/g;
-// const validacion = true;
+// var validacion = true;
 
 //Validación datos Doctor
 function validarDoctor () {
@@ -49,11 +49,12 @@ function validarDoctor () {
             error.addEventListener('input',() => {
                 error.style.border = 'solid 2px';
                 error.style.backgroundColor = 'white'
-                console.log(NameD)
             })
         }
         return NameD;
     }
+
+    validarNombre()
     
     function validarApellido() {
         let LnameD = document.getElementById('do_lastname').value;
@@ -78,6 +79,8 @@ function validarDoctor () {
         return LnameD;
     }
 
+    validarApellido()
+
     function validarCedula() {
         let CedulaD = document.getElementById('do_cedula').value;
         
@@ -101,6 +104,8 @@ function validarDoctor () {
         return CedulaD;
     }
 
+    validarCedula()
+
     function validarEspecialidad() {
         let EspecialidadD = document.getElementById('do_especialidad').value;
         
@@ -123,11 +128,13 @@ function validarDoctor () {
         }
         return EspecialidadD;
     }
+    
+    validarEspecialidad()
 
     function validarConsultorio() {
-        let Consultorio = document.getElementById('consul')
-
-        if (valConsultorio.test(Consultorio)) {
+        let Consultorio = document.getElementById('consul').value;
+        
+        if (!valConsultorio.test(Consultorio)) {
             validacion = false;
             alerta += "-Consultorio\n";
             let error = document.getElementById('consul')
@@ -146,6 +153,8 @@ function validarDoctor () {
         }
         return Consultorio;
     }
+    
+    validarConsultorio()
 
     function validarCorreo() {
         let Correo = document.getElementById('email').value;
@@ -170,11 +179,6 @@ function validarDoctor () {
         return Correo;
     }
     
-    validarNombre()
-    validarApellido()
-    validarCedula()
-    validarEspecialidad()
-    validarConsultorio()
     validarCorreo()
 
     if (validacion === false) {
@@ -189,16 +193,15 @@ function validarDoctor () {
             Consultorio : validarConsultorio(),
             Correo : validarCorreo(),
         };
-            // console.log(Persona)
-
-            let  jsonDoctores = JSON.stringify(Doctor);
-            //console.log(jsonPaciente)
-            
-            //console.log(Pacientes);
-            Doctores.push(jsonDoctores);
+            Doctores.push(Doctor);
+            console.log(Doctor)
         }
 
-    
+        
+        let  jsonDoctores = JSON.stringify(Doctores);
+
+        console.log(Doctores)
+
     // console.log(validacion)
     // //console.log(jsonPaciente)
     // console.log(Doctores)

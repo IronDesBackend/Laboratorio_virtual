@@ -65,6 +65,12 @@ html {
     background-color: #00A878 ;
 }
 
+/*Se uso para probar el funcionamiento de los inputs*/
+.warning {
+    border: solid #FF6060 2px;
+    background-color: #FF8787;
+}
+
 .caja {
     margin: 25px;
 }
@@ -82,7 +88,6 @@ html {
     margin-bottom: 0;
 }
 
-
 .paciente {
     background-color: #30BCED;
     text-align: center;
@@ -92,6 +97,10 @@ html {
     margin: 50px;
     display: inline-block;
     width: 60%;
+}
+
+.lista {
+    display: none;
 }
 
 .doctor {

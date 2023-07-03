@@ -5,6 +5,7 @@ boton.addEventListener("click", (e) => {
     e.preventDefault();
     validarPaciente();
     enviarP();
+    // ListaPacientes();
 });
 
 //Variables del Paciente
@@ -28,7 +29,7 @@ const valTel = /^(\d{10})$/g;
 
 // Validación datos Paciente
 function validarPaciente () {
-    
+
     let validacion = true;
     let alerta = 'Los siguientes parametros no son validos:\r\n'
 
@@ -39,23 +40,27 @@ function validarPaciente () {
             validacion = false;
             alerta += "-Nombre\n";
             let error = document.getElementById('pa_name')
+                // error.classList.add('warning')
                 error.style.border = 'solid #FF6060 2px';
                 error.style.backgroundColor = '#FF8787'
                     error.addEventListener('input',() => {
-                        error.style.border = 'solid 2px';
-                        error.style.backgroundColor = 'white'
-                    })
+                            error.style.border = 'solid 2px';
+                            error.style.backgroundColor = 'white'
+                        })
         } else {
             let error = document.getElementById('pa_name')
-            error.addEventListener('input',() => {
+                //error.classList.remove('warning')
+            error.removeEventListener('input',() => {
                 error.style.border = 'solid 2px';
                 error.style.backgroundColor = 'white'
-                console.log(NameP)
             })
         }
         return NameP;
     }
-    
+
+    validarNombre()
+    console.log(validacion)
+
     function validarApellido() {
         let LnameP = document.getElementById('pa_lastname').value;
         
@@ -79,6 +84,9 @@ function validarPaciente () {
         return LnameP;
     }
 
+    validarApellido()
+    console.log(validacion)
+
     function validarCedula() {
         let CedulaP = document.getElementById('pa_cedula').value;
         
@@ -101,6 +109,9 @@ function validarPaciente () {
         }
         return CedulaP;
     }
+
+    validarCedula()
+    console.log(validacion)
 
     function validarEdad() {
         let EdadP = 
@@ -127,6 +138,9 @@ function validarPaciente () {
         return EdadP;
     }
 
+    validarEdad()
+    console.log(validacion)
+
     function validarTelefono() {
         let TelefonoP = document.getElementById('telefono').value;
         
@@ -149,7 +163,9 @@ function validarPaciente () {
         }
         return TelefonoP;
     }
-    
+
+    validarTelefono()
+    console.log(validacion)
 
     function validarEspecialidad() {
         let EspecialidadP = document.getElementById('pa_especialidad').value;
@@ -163,64 +179,64 @@ function validarPaciente () {
                     error.addEventListener('input',() => {
                         error.style.border = 'solid 2px';
                         error.style.backgroundColor = 'white'
-                        console.log(EspecialidadP)
                     })
         } else {
             let error = document.getElementById('pa_especialidad')
             error.addEventListener('input',() => {
                 error.style.border = 'solid 2px';
                 error.style.backgroundColor = 'white'
-                console.log(EspecialidadP)
             })
         }
         return EspecialidadP;
     }
-console.log(validacion)
-    validarNombre()
-    validarApellido()
-    validarCedula()
-    validarEdad()
-    validarTelefono()
+
     validarEspecialidad()
+    console.log(validacion)
 
     if (validacion === false) {
         alert(alerta + "Por favor, ingrese valores validos.")
         } else {
         
-        // let inputs = document.querySelector('.inputs')
-        // //console.log(inputs)
-        //     error.style.border = 'solid 2px'
-        //     error.style.backgroundColor = 'white'
-        
-
-        const Persona = {
-            Nombres : validarNombre(),
-            Apellidos : validarApellido(),
-            Cedula : validarCedula(),
-            Edad : validarEdad(),
-            Telefono : validarTelefono(),
-            Especialidad : validarEspecialidad(),
-        };
-            // console.log(Persona)
-
-            let  jsonPaciente = JSON.stringify(Persona);
-            console.log(jsonPaciente)
-            
-            //console.log(Pacientes);
-            Pacientes.push(jsonPaciente);
-        }
-
+            // let inputs = document.querySelectorAll(".inputs")
+            // console.log(inputs)
+            // inputs.classList.remove("warning")
     
-    console.log(validacion)
-    //console.log(jsonPaciente)
-    console.log(Pacientes)
+    const Persona = {
+        Nombres : validarNombre(),
+        Apellidos : validarApellido(),
+        Cedula : validarCedula(),
+        Edad : validarEdad(),
+        Telefono : validarTelefono(),
+        Especialidad : validarEspecialidad()
+    };
+    
+    Pacientes.push(Persona);
 
-    // function prueba01 () { console.log("estoy imprimiendo la validacion " + validacion)}
-    // setInterval(prueba01, 5000)
+        function ListaPacientes (Pacientes) {
+
+            let lista = document.getElementById("lista")
+            lista.classList.remove('lista')
+            
+            //Aun no funciona
+            // let Paciente = document.createElement('li')
+            // Paciente.appendChild(lista)
+        }
+        ListaPacientes()
+
+    }
+    
+    let  jsonPacientes = JSON.stringify(Pacientes);
+        console.log(Pacientes)
+        console.log(validacion)
+
 }
+
 
 
 function enviarP () {
     let form = document.querySelector('.paciente');
     form.reset();
 }
+
+//Ideas
+// location.reload()
