@@ -19,6 +19,8 @@ let EspecialidadP = document.getElementById('pa_especialidad').value;
 
 const Pacientes = [];
 
+var b = 0
+
 //Expresiones regulares
 const valName = /^[A-Za-z]+\s*?[A-Za-z]*?\s*?[A-Za-z]*?\s*?$/g;
 const valLname = /^[A-Za-zÑñÁáÉéÍíÓóÚú]+\s*?[A-Za-zÑñÁáÉéÍíÓóÚú]+\s*?$/g;
@@ -59,7 +61,7 @@ function validarPaciente () {
     }
 
     validarNombre()
-    console.log(validacion)
+    // console.log(validacion)
 
     function validarApellido() {
         let LnameP = document.getElementById('pa_lastname').value;
@@ -85,7 +87,7 @@ function validarPaciente () {
     }
 
     validarApellido()
-    console.log(validacion)
+    // console.log(validacion)
 
     function validarCedula() {
         let CedulaP = document.getElementById('pa_cedula').value;
@@ -111,7 +113,7 @@ function validarPaciente () {
     }
 
     validarCedula()
-    console.log(validacion)
+    // console.log(validacion)
 
     function validarEdad() {
         let EdadP = 
@@ -139,7 +141,7 @@ function validarPaciente () {
     }
 
     validarEdad()
-    console.log(validacion)
+    // console.log(validacion)
 
     function validarTelefono() {
         let TelefonoP = document.getElementById('telefono').value;
@@ -165,7 +167,7 @@ function validarPaciente () {
     }
 
     validarTelefono()
-    console.log(validacion)
+    // console.log(validacion)
 
     function validarEspecialidad() {
         let EspecialidadP = document.getElementById('pa_especialidad').value;
@@ -191,45 +193,91 @@ function validarPaciente () {
     }
 
     validarEspecialidad()
-    console.log(validacion)
+    // console.log(validacion)
 
     if (validacion === false) {
         alert(alerta + "Por favor, ingrese valores validos.")
         } else {
-        
-            // let inputs = document.querySelectorAll(".inputs")
-            // console.log(inputs)
-            // inputs.classList.remove("warning")
     
     const Persona = {
+        Cedula : validarCedula(),
         Nombres : validarNombre(),
         Apellidos : validarApellido(),
-        Cedula : validarCedula(),
         Edad : validarEdad(),
         Telefono : validarTelefono(),
         Especialidad : validarEspecialidad()
     };
     
     Pacientes.push(Persona);
-
-        function ListaPacientes (Pacientes) {
-
-            let lista = document.getElementById("lista")
-            lista.classList.remove('lista')
-            
-            //Aun no funciona
-            // let Paciente = document.createElement('li')
-            // Paciente.appendChild(lista)
-        }
-        ListaPacientes()
-
-    }
     
-    let  jsonPacientes = JSON.stringify(Pacientes);
-        console.log(Pacientes)
-        console.log(validacion)
+    let jsonPacientes = JSON.stringify(Pacientes);
+    let objPacientes = JSON.parse(jsonPacientes);
+    generarLista(objPacientes)
+}
 
 }
+
+//Lista de Pacientes
+function generarLista(objPacientes) {
+    let name_col = ['Cedula de Ciudadania', 'Nombres', 'Apellidos', 'Edad', 'Número de contacto', 'Especialidad requerida'];
+    let lista_container = document.getElementById("lista")
+        lista_container.classList.remove('lista_none')
+        lista_container.classList.add('lista_style')
+    
+        let tabla_pacientes = document.createElement('table')
+        let thead_pacientes = document.createElement('thead')
+        let tbody_pacientes = document.createElement('tbody')
+
+
+        function campos (a) {
+            let tr_pacientes = document.createElement('tr')
+            for (let x in a) {
+                let th_pacientes = document.createElement('th')
+                let cont = document.createTextNode(a[x])
+                th_pacientes.appendChild(cont)
+                tr_pacientes.appendChild(th_pacientes)
+            }
+            thead_pacientes.appendChild(tr_pacientes)
+        }
+
+        function registros () {
+            for (let i in objPacientes) {
+                let lis_paciente = objPacientes[i]
+            
+                for (let y = 0; y < 1; y++ ) {
+                    let tupla = document.createElement('tr')
+
+                    for (let z in lis_paciente) {
+                        let celda = document.createElement("td");
+                        let valor = document.createTextNode(lis_paciente[z])
+                        celda.appendChild(valor)
+                        tupla.appendChild(celda)
+                    }
+                    tbody_pacientes.appendChild(tupla)
+                }
+                b++
+            }
+            tabla_pacientes.appendChild(thead_pacientes)
+            tabla_pacientes.appendChild(tbody_pacientes)
+            lista_container.appendChild(tabla_pacientes)
+        }
+
+        if (b === 0){
+            campos(name_col);
+            registros()  
+        } else {
+            let tabla_desechable = document.getElementsByTagName('table')
+            tabla_desechable[0].remove()
+
+            campos(name_col);
+            registros()
+            }
+}
+  
+
+
+
+
 
 
 

@@ -99,7 +99,16 @@ html {
     width: 60%;
 }
 
-.lista {
+.lista_style {
+    width:auto;
+    font-size: x-large;
+}
+
+.lista_style b{
+    margin: 15px;
+}
+
+.lista_none {
     display: none;
 }
 
