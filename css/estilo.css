@@ -4,6 +4,58 @@
     outline: 0;
 }
 
+h1 {
+    font-size: 600%;
+}
+
+h3 {
+    font-size: 300%;
+    margin-bottom: 0;
+}
+/*No es necesario actualmente
+img {
+    margin: 0;
+} */
+
+a {
+    text-decoration: none;
+    margin: 30px;
+    color:unset;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav a div img {
+    height: 100px;
+}
+
+nav a {
+    margin:0;
+}
+
+.logo {
+    height: 100px;
+    margin:0;
+}
+
+#vinculo_ini :hover {
+    color: white;
+    background-color:#c6c6c6;
+}
+
+#vinculo_pa :hover {
+    color: white;
+    background-color:#2b9ac2;
+}
+
+#vinculo_do :hover {
+    color: white;
+    background-color:#05835f;
+}
+
 button {
     display: inline-block;
     width: 20%;
@@ -11,16 +63,47 @@ button {
     margin-top: 10px;
 }
 
-h1 {
-    font-size: 600%;
+table {
+    border: solid 2px white;
+    border-collapse: collapse;
 }
 
-h3 {
-    font-size: 300%;
+.doc_th th {
+    background-color: #069e73;
+    border-bottom: solid 2px white;
+    padding: 15px 20px;
+    width: auto;
 }
 
-img {
-    margin: 0;
+.doc_tr tr {
+    cursor: pointer;
+    background-color: #03c28c;
+}
+
+.doc_tr :hover {
+    background-color: #00A878;
+}
+
+.pac_th th {
+    background-color: #31b6e6;
+    border-bottom: solid 2px white;
+    padding: 15px 20px;
+    width: auto;
+}
+
+.pac_tr tr {
+    cursor: pointer;
+    background-color: #60d5ff;
+}
+
+.pac_tr :hover {
+    background-color: #30BCED;
+}
+
+td {
+    border-bottom: solid 2px white;
+    padding: 15px 20px;
+    width: auto;
 }
 
 .inputs {
@@ -31,6 +114,11 @@ img {
     text-align: center;
     border: solid 2px;
 }
+
+/*No funciona 
+.inputs :hover {
+    background-color: white;
+} */
 
 label {
     margin-right: 0;
@@ -53,16 +141,20 @@ html {
     border: solid black 5px; */
 }
 
+#inicio {
+    background-color: #fff;
+}
+
 #main_paci {
-    background-color: #30BCED ;
+    background-color: #30BCED;
 }
 
 #main_doctor {
-    background-color: #FFFAFF ;
+    background-color: #00A878;
 }
 
 #main_admin {
-    background-color: #00A878 ;
+    background-color: #FFFAFF;
 }
 
 /*Se uso para probar el funcionamiento de los inputs*/
@@ -79,12 +171,11 @@ html {
     border-style: solid;
     border-width: 5px;
     border-color: #515158;
-    margin: 30px;
 }
 
 .fir_enun {
     color: #FFFAFF;
-    margin: 25px;
+    margin: 30px;
     margin-bottom: 0;
 }
 
@@ -99,21 +190,8 @@ html {
     width: 60%;
 }
 
-.lista_style {
-    width:auto;
-    font-size: x-large;
-}
-
-.lista_style b{
-    margin: 15px;
-}
-
-.lista_none {
-    display: none;
-}
-
 .doctor {
-    background-color: #FFFAFF;
+    background-color: #00A878;
     text-align: center;
     font-size: x-large;
     border: solid #515158;
@@ -123,3 +201,15 @@ html {
     width: 60%;
 }
 
+.lista_none {
+    display: none;
+}
+
+.lista_style {
+    width:auto;
+    font-size: x-large;
+}
+
+.lista_style b{
+    margin: 15px;
+}

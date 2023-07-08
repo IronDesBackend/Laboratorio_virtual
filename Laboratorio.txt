@@ -15,7 +15,7 @@ ______________________________________________________________________
 
 ______________________________________________________________________
 
-6. Debe haber una página que muestra el listado de doctores  con su información (leer el JSON de pacientes, utilizar DOM para desplegar la información en la página).
+______________________________________________________________________
 
 7. Los archivos HTML, CSS y JavaScript deben estar separados.
 
@@ -26,59 +26,3 @@ __________________________________________________________________________
 30BCED-303036-FFFAFF-00A878 ===> Primera paleta -->ponlo a modo de barra
 03B5AA-037971-023436-FAFFD8 ==> Segunda paleta
 CCDAD1-9CAEA9-788585-0C1B33 ==> Tercera paleta
-
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-___________________________________________________________________________
-
-
-        // const Lis_Cedula = document.createElement('th')
-        // const Lis_Nombres = document.createElement('th')
-        // const Lis_Apellido = document.createElement('th')
-        // const Lis_Edad = document.createElement('th')
-        // const Lis_Telefono = document.createElement('th')
-        // const Lis_Especialidad = document.createElement('th')
-
-        // Lis_Cedula.textContent = "Cedula de Ciudadania"
-        // Lis_Nombres.textContent = "Nombres"
-        // Lis_Apellido.textContent = "Apellido"
-        // Lis_Edad.textContent = "Edad"
-        // Lis_Telefono.textContent = "Telefono"
-        // Lis_Especialidad.textContent = "Especialidad requerida"
-
-        // tr_pacientes.appendChild(Lis_Cedula)
-        // tr_pacientes.appendChild(Lis_Nombres)
-        // tr_pacientes.appendChild(Lis_Apellido)
-        // tr_pacientes.appendChild(Lis_Edad)
-        // tr_pacientes.appendChild(Lis_Telefono)
-        // tr_pacientes.appendChild(Lis_Especialidad)
-
-        // thead_pacientes.appendChild(tr_pacientes)
