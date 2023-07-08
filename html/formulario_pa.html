@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Librerias de estilo -->
     <link rel="stylesheet" href="../css/estilo.css">
+    <!------------------------->
     <title>Pacientes</title>
 </head>
 <body>
@@ -17,13 +19,13 @@
         <nav>
             <a id="vinculo_ini" href="./index.html">
                 <div id="inicio" class="caja_index">
-                    <!-- <h3>Pacientes</h3> -->
+                    <!-- <h3>Inicio</h3> Nombre del recurso-->
                     <img src="../img/Las-Cruces.png">
                 </div>
             </a>
             <a id="vinculo_do" href="./formulario_do.html">
                 <div id="main_doctor" class="caja_index">
-                    <!-- <h3>Doctores</h3> -->
+                    <!-- <h3>Doctores</h3> Nombre del recurso-->
                     <img src="../img/Doctor-sinFon.png">
                     
                 </div>
@@ -36,6 +38,7 @@
         <h3 class="fir_enun">Rellene los siguientes campos y espere la debida respuesta.</h3>
             <div>
                 <form class="paciente">
+                    <!-- Datos del paciente -->
                     <div class="caja">
                         <label for="pa_name" class="labels">Nombre: </label>
                         <input id="pa_name" name="pa_name" class="inputs" type="text" placeholder="Ingrese su nombre completo">
@@ -73,19 +76,23 @@
                             <option value="Radiologia">Radiología</option>
                         </select>
                     </div>
+                    <!------------------------>
 
-                    </select>
-
+                    <!-- Boton de envio -->
                     <button id="boton" name="pa_boton">Enviar</button>
+                    <!------------------------>
                 </form>
             </div>
-
+            <!-- Listado de pacientes -->
             <div id="lista" name="lista" class="paciente lista_none">
                 <h3 class="fir_enun">Listado de Pacientes</h2>
             </div>
+            <!-------------------------->
     </main>
 
     
 </body>
-    <script src="../js/scripts_paciente.js"></script> 
+    <!-- Script -->
+    <script src="../js/scripts_paciente.js"></script>
+    <!------------>
 </html>

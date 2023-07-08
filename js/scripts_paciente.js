@@ -1,3 +1,4 @@
+//Boton de envio
 const boton = document.getElementById("boton");
 
 //Eventos
@@ -17,7 +18,7 @@ let TelefonoP = document.getElementById('telefono').value;
 let EspecialidadP = document.getElementById('pa_especialidad').value;
 
 const Pacientes = [];
-let b = 0;
+let enlista = 0;
 
 //Expresiones regulares
 const valName = /^[A-Za-z]+\s*?[A-Za-z]*?\s*?[A-Za-z]*?\s*?$/g;
@@ -25,7 +26,7 @@ const valLname = /^[A-Za-zÑñÁáÉéÍíÓóÚú]+\s*?[A-Za-zÑñÁáÉéÍí�
 const valCedula = /\d/g;
 const valTel = /^(\d{10})$/g;
 
-// Validación datos Paciente
+//Validación datos Paciente
 function validarPaciente () {
 
     let validacion = true;
@@ -38,26 +39,20 @@ function validarPaciente () {
             validacion = false;
             alerta += "-Nombre\n";
             let error = document.getElementById('pa_name');
-                // error.classList.add('warning')
-                error.style.border = 'solid #FF6060 2px';
-                error.style.backgroundColor = '#FF8787';
+                error.classList.remove("normal");
+                error.classList.add('warning');
                     error.addEventListener('input',() => {
-                            error.style.border = 'solid 2px';
-                            error.style.backgroundColor = 'white';
+                        error.classList.remove('warning');
+                        error.classList.add("normal");
                         })
-        } else {
+        } if (valName.test(NameP)) {
             let error = document.getElementById('pa_name');
-                //error.classList.remove('warning')
-            error.removeEventListener('input',() => {
-                error.style.border = 'solid 2px';
-                error.style.backgroundColor = 'white';
-            })
+                error.classList.add("normal");
         }
         return NameP;
     }
 
-    validarNombre()
-    // console.log(validacion)
+    validarNombre();
 
     function validarApellido() {
         let LnameP = document.getElementById('pa_lastname').value;
@@ -66,24 +61,20 @@ function validarPaciente () {
             validacion = false;
             alerta += "-Apellido\n";
             let error = document.getElementById('pa_lastname');
-                error.style.border = 'solid #FF6060 2px';
-                error.style.backgroundColor = '#FF8787';
+                error.classList.remove("normal");
+                error.classList.add('warning');
                     error.addEventListener('input',() => {
-                        error.style.border = 'solid 2px';
-                        error.style.backgroundColor = 'white';
-                    })
-        } else {
-            let error = document.getElementById('pa_lastname');
-            error.addEventListener('input',() => {
-                error.style.border = 'solid 2px';
-                error.style.backgroundColor = 'white';
-            })
+                        error.classList.remove('warning');
+                        error.classList.add("normal");
+                        })
+        } if (valLname.test(LnameP)) {
+            let error = document.getElementById('pa_name');
+                error.classList.add("normal");
         }
         return LnameP;
     }
 
-    validarApellido()
-    // console.log(validacion)
+    validarApellido();
 
     function validarCedula() {
         let CedulaP = document.getElementById('pa_cedula').value;
@@ -92,24 +83,20 @@ function validarPaciente () {
             validacion = false;
             alerta += "-Cédula\n";
             let error = document.getElementById('pa_cedula');
-                error.style.border = 'solid #FF6060 2px';
-                error.style.backgroundColor = '#FF8787';
+                error.classList.remove("normal");
+                error.classList.add('warning');
                     error.addEventListener('input',() => {
-                        error.style.border = 'solid 2px';
-                        error.style.backgroundColor = 'white';
-                    })
-        } else {
-            let error = document.getElementById('pa_cedula');
-            error.addEventListener('input',() => {
-                error.style.border = 'solid 2px';
-                error.style.backgroundColor = 'white';
-            })
+                        error.classList.remove('warning');
+                        error.classList.add("normal");
+                        })
+        } if (valCedula.test(CedulaP)) {
+            let error = document.getElementById('pa_name');
+                error.classList.add("normal");
         }
         return CedulaP;
     }
 
-    validarCedula()
-    // console.log(validacion)
+    validarCedula();
 
     function validarEdad() {
         let EdadP = 
@@ -120,24 +107,17 @@ function validarPaciente () {
             validacion = false;
             alerta += "-Fecha de nacimiento\n";
             let error = document.getElementById('edad');
-                error.style.border = 'solid #FF6060 2px';
-                error.style.backgroundColor = '#FF8787';
+                error.classList.remove("normal");
+                error.classList.add('warning');
                     error.addEventListener('input',() => {
-                        error.style.border = 'solid 2px';
-                        error.style.backgroundColor = 'white';
-                    })
-        } else {
-            let error = document.getElementById('edad');
-            error.addEventListener('input',() => {
-                error.style.border = 'solid 2px';
-                error.style.backgroundColor = 'white';
-            })
+                        error.classList.remove('warning');
+                        error.classList.add("normal");
+                        });
         }
         return EdadP;
     }
 
-    validarEdad()
-    // console.log(validacion)
+    validarEdad();
 
     function validarTelefono() {
         let TelefonoP = document.getElementById('telefono').value;
@@ -146,24 +126,20 @@ function validarPaciente () {
             validacion = false;
             alerta += "-Telefono\n";
             let error = document.getElementById('telefono');
-                error.style.border = 'solid #FF6060 2px';
-                error.style.backgroundColor = '#FF8787';
+                error.classList.remove("normal");
+                error.classList.add('warning');
                     error.addEventListener('input',() => {
-                        error.style.border = 'solid 2px';
-                        error.style.backgroundColor = 'white';
-                    })
-        } else {
-            let error = document.getElementById('telefono');
-            error.addEventListener('input',() => {
-                error.style.border = 'solid 2px';
-                error.style.backgroundColor = 'white';
-            })
+                        error.classList.remove('warning');
+                        error.classList.add("normal");
+                        })
+        } if (valTel.test(TelefonoP)) {
+            let error = document.getElementById('pa_name');
+                error.classList.add("normal");
         }
         return TelefonoP;
     }
 
-    validarTelefono()
-    // console.log(validacion)
+    validarTelefono();
 
     function validarEspecialidad() {
         let EspecialidadP = document.getElementById('pa_especialidad').value;
@@ -172,50 +148,52 @@ function validarPaciente () {
             validacion = false;
             alerta += "-Especialidad\n";
             let error = document.getElementById('pa_especialidad');
-                error.style.border = 'solid #FF6060 2px';
-                error.style.backgroundColor = '#FF8787';
+                error.classList.remove("normal");
+                error.classList.add('warning');
                     error.addEventListener('input',() => {
-                        error.style.border = 'solid 2px';
-                        error.style.backgroundColor = 'white';
-                    })
-        } else {
-            let error = document.getElementById('pa_especialidad');
-            error.addEventListener('input',() => {
-                error.style.border = 'solid 2px';
-                error.style.backgroundColor = 'white';
-            })
+                        error.classList.remove('warning');
+                        error.classList.add("normal");
+                        })
         }
         return EspecialidadP;
     }
 
-    validarEspecialidad()
-    // console.log(validacion)
+    validarEspecialidad();
 
+    //Ultima validación de campos llenos
     if (validacion === false) {
         alert(alerta + "Por favor, ingrese valores validos.");
         } else {
+            //Creacion del objeto Persona
+            const Persona = {
+                Cedula : validarCedula(),
+                Nombres : validarNombre(),
+                Apellidos : validarApellido(),
+                Edad : validarEdad(),
+                Telefono : validarTelefono(),
+                Especialidad : validarEspecialidad()
+            };
+
+            //Envio de Persona al arreglo Pacientes
+            Pacientes.push(Persona);
     
-    const Persona = {
-        Cedula : validarCedula(),
-        Nombres : validarNombre(),
-        Apellidos : validarApellido(),
-        Edad : validarEdad(),
-        Telefono : validarTelefono(),
-        Especialidad : validarEspecialidad()
-    };
-    
-    Pacientes.push(Persona);
-    
-    let jsonPacientes = JSON.stringify(Pacientes);
-    let objPacientes = JSON.parse(jsonPacientes);
-    generarLista(objPacientes)
+            //Transformación de Pacientes a json_Pacientes
+            let jsonPacientes = JSON.stringify(Pacientes);
+
+            //Transformación del json_Pacientes a objPacientes
+            let objPacientes = JSON.parse(jsonPacientes);
+            generarLista(objPacientes)
 }
+
 
 }
 
 //Lista de Pacientes
 function generarLista(objPacientes) {
+    //Etiquetas del objPacientes
     let name_col = ['Cedula de Ciudadania', 'Nombres', 'Apellidos', 'Edad', 'Número de contacto', 'Especialidad requerida'];
+
+    //Creación de la lista
     let lista_container = document.getElementById("lista");
         lista_container.classList.remove('lista_none');
         lista_container.classList.add('lista_style');
@@ -226,6 +204,7 @@ function generarLista(objPacientes) {
         thead_pacientes.classList.add('pac_th');
         tbody_pacientes.classList.add('pac_tr');
 
+        //Creación de los campos de la lista
         function campos (a) {
             let tr_pacientes = document.createElement('tr');
             for (let x in a) {
@@ -237,6 +216,7 @@ function generarLista(objPacientes) {
             thead_pacientes.appendChild(tr_pacientes);
         }
 
+        //Creación de los registros o tuplas de la lista
         function registros () {
             for (let i in objPacientes) {
                 let lis_paciente = objPacientes[i];
@@ -250,14 +230,15 @@ function generarLista(objPacientes) {
                     }
                     tbody_pacientes.appendChild(tupla);
                 }
-                b++
+                enlista++
             }
             tabla_pacientes.appendChild(thead_pacientes);
             tabla_pacientes.appendChild(tbody_pacientes);
             lista_container.appendChild(tabla_pacientes);
         }
 
-        if (b === 0){
+        //Llenado de la lista y eliminación de listas antiguas
+        if (enlista === 0){
             campos(name_col);
             registros();
         } else {
@@ -269,10 +250,8 @@ function generarLista(objPacientes) {
             }
 }
 
+//Reinicio de formulario
 function enviarP () {
     let form = document.querySelector('.paciente');
     form.reset();
 }
-
-//Ideas
-// location.reload()

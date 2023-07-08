@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Librerias de estilo -->
     <link rel="stylesheet" href="../css/estilo.css">
+    <!------------------------->
     <title>Doctores</title>
 </head>
 <body>
@@ -17,13 +19,13 @@
         <nav>
             <a id="vinculo_pa" href="./formulario_pa.html">
                 <div id="main_paci" class="caja_index">
-                    <!-- <h3>Pacientes</h3> -->
+                    <!-- <h3>Pacientes</h3> Nombre del recurso-->
                     <img src="../img/Paciente-sinFon.png">
                 </div>
             </a>
             <a id="vinculo_ini" href="./index.html">
                 <div id="inicio" class="caja_index">
-                    <!-- <h3>Pacientes</h3> -->
+                    <!-- <h3>Inicio</h3> Nombre del recurso-->
                     <img src="../img/Las-Cruces.png">
                 </div>
             </a>
@@ -34,6 +36,7 @@
         <h3 class="fir_enun">Rellene los siguientes campos.</h3>
             <div>
                 <form class="doctor">
+                    <!-- Datos del paciente -->
                     <div class="caja">
                         <label for="do_name" class="labels">Nombre: </label>
                         <input id="do_name" name="do_name" class="inputs" type="text" placeholder="Ingrese su nombre completo">
@@ -73,15 +76,21 @@
                     </div>
 
                     </select>
+                    <!------------------------>
 
+                    <!-- Boton de envio -->
                     <button id="boton" name="do_boton">Enviar</button>
+                    <!------------------------>
                 </form>
             </div>
-
+            <!-- Listado de pacientes -->
             <div id="lista" name="lista" class="doctor lista_none">
                 <h3 class="fir_enun">Listado de Pacientes</h2>
             </div>
+            <!-------------------------->
     </main>
 </body>
-    <script src="../js/scripts_doctor.js"></script> 
+    <!-- Script -->
+    <script src="../js/scripts_doctor.js"></script>
+    <!------------>
 </html>

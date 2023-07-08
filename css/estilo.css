@@ -3,20 +3,29 @@
     padding:0;
     outline: 0;
 }
-
+/* Titulos */
 h1 {
     font-size: 600%;
+}
+
+h1 :hover {
+    color: #cccbcb;
 }
 
 h3 {
     font-size: 300%;
     margin-bottom: 0;
 }
+
+.logo {
+    height: 100px;
+    margin:0;
+}
 /*No es necesario actualmente
 img {
     margin: 0;
 } */
-
+/* Navegación */
 a {
     text-decoration: none;
     margin: 30px;
@@ -35,12 +44,7 @@ nav a div img {
 nav a {
     margin:0;
 }
-
-.logo {
-    height: 100px;
-    margin:0;
-}
-
+/* Efectos de la navegacion */
 #vinculo_ini :hover {
     color: white;
     background-color:#c6c6c6;
@@ -55,14 +59,14 @@ nav a {
     color: white;
     background-color:#05835f;
 }
-
+/* Envio de datos*/
 button {
     display: inline-block;
     width: 20%;
     font-size: x-large;
     margin-top: 10px;
 }
-
+/* Listas */
 table {
     border: solid 2px white;
     border-collapse: collapse;
@@ -105,14 +109,25 @@ td {
     padding: 15px 20px;
     width: auto;
 }
-
+/* Entrada de datos */
 .inputs {
     margin-left: 0;
     margin-right: 0;
     font-size: large;
     width: 35%;
     text-align: center;
-    border: solid 2px;
+    border: solid black 2px;
+    background-color: white;
+}
+
+.warning {
+    border: solid #FF6060 2px;
+    background-color: #FF8787;
+}
+
+.normal {
+    border: solid black 2px;
+    background-color: white;
 }
 
 /*No funciona 
@@ -125,9 +140,9 @@ label {
     margin-left: 0;
     font-weight: 600;
 }
-
+/* Decoración de cajas */
 html {
-    background-color: #303036 ;
+    background-color: #0C1B33;
     text-align: center;
 }
 
@@ -136,9 +151,6 @@ html {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    /* background-color: #FFFAFF;
-    margin: 60px;
-    border: solid black 5px; */
 }
 
 #inicio {
@@ -155,12 +167,6 @@ html {
 
 #main_admin {
     background-color: #FFFAFF;
-}
-
-/*Se uso para probar el funcionamiento de los inputs*/
-.warning {
-    border: solid #FF6060 2px;
-    background-color: #FF8787;
 }
 
 .caja {
@@ -200,7 +206,7 @@ html {
     display: inline-block;
     width: 60%;
 }
-
+/* Efecto de las listas */
 .lista_none {
     display: none;
 }

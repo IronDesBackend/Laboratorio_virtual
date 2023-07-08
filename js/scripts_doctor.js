@@ -1,3 +1,4 @@
+//Boton de envio
 const boton = document.getElementById("boton");
 
 //Eventos
@@ -16,7 +17,7 @@ let Consultorio = document.getElementById('consul').value;
 let Correo = document.getElementById('email').value;
 
 const Doctores = [];
-let b = 0;
+let enlista = 0;
 
 //Expresiones regulares
 const valName = /^[A-Za-z]+\s*?[A-Za-z]*?\s*?[A-Za-z]*?\s*?$/g;
@@ -38,18 +39,15 @@ function validarDoctor () {
             validacion = false;
             alerta += "-Nombre\n";
             let error = document.getElementById('do_name');
-                error.style.border = 'solid #FF6060 2px';
-                error.style.backgroundColor = '#FF8787';
+                error.classList.remove("normal");
+                error.classList.add('warning');
                     error.addEventListener('input',() => {
-                        error.style.border = 'solid 2px';
-                        error.style.backgroundColor = 'white';
-                    })
-        } else {
+                        error.classList.remove('warning');
+                        error.classList.add("normal");
+                        })
+        } if (valName.test(NameD)) {
             let error = document.getElementById('do_name');
-            error.addEventListener('input',() => {
-                error.style.border = 'solid 2px';
-                error.style.backgroundColor = 'white';
-            })
+                error.classList.add("normal");
         }
         return NameD;
     }
@@ -63,18 +61,15 @@ function validarDoctor () {
             validacion = false;
             alerta += "-Apellido\n";
             let error = document.getElementById('do_lastname')
-                error.style.border = 'solid #FF6060 2px';
-                error.style.backgroundColor = '#FF8787'
+                error.classList.remove("normal");
+                error.classList.add('warning');
                     error.addEventListener('input',() => {
-                        error.style.border = 'solid 2px';
-                        error.style.backgroundColor = 'white'
-                    })
-        } else {
-            let error = document.getElementById('do_lastname')
-            error.addEventListener('input',() => {
-                error.style.border = 'solid 2px';
-                error.style.backgroundColor = 'white'
-            })
+                        error.classList.remove('warning');
+                        error.classList.add("normal");
+                        })
+        } if (valLname.test(LnameD)) {
+            let error = document.getElementById('do_lastname');
+                error.classList.add("normal");
         }
         return LnameD;
     }
@@ -88,18 +83,15 @@ function validarDoctor () {
             validacion = false;
             alerta += "-Cédula\n";
             let error = document.getElementById('do_cedula');
-                error.style.border = 'solid #FF6060 2px';
-                error.style.backgroundColor = '#FF8787';
+                error.classList.remove("normal");
+                error.classList.add('warning');
                     error.addEventListener('input',() => {
-                        error.style.border = 'solid 2px';
-                        error.style.backgroundColor = 'white';
-                    })
-        } else {
+                        error.classList.remove('warning');
+                        error.classList.add("normal");
+                        })
+        } if (valCedula.test(CedulaD)) {
             let error = document.getElementById('do_cedula');
-            error.addEventListener('input',() => {
-                error.style.border = 'solid 2px';
-                error.style.backgroundColor = 'white';
-            })
+                error.classList.add("normal");
         }
         return CedulaD;
     }
@@ -113,18 +105,12 @@ function validarDoctor () {
             validacion = false;
             alerta += "-Especialidad\n";
             let error = document.getElementById('do_especialidad');
-                error.style.border = 'solid #FF6060 2px';
-                error.style.backgroundColor = '#FF8787';
+                error.classList.remove("normal");
+                error.classList.add('warning');
                     error.addEventListener('input',() => {
-                        error.style.border = 'solid 2px';
-                        error.style.backgroundColor = 'white';
-                    })
-        } else {
-            let error = document.getElementById('do_especialidad');
-            error.addEventListener('input',() => {
-                error.style.border = 'solid 2px';
-                error.style.backgroundColor = 'white';
-            })
+                        error.classList.remove('warning');
+                        error.classList.add("normal");
+                        })
         }
         return EspecialidadD;
     }
@@ -138,18 +124,15 @@ function validarDoctor () {
             validacion = false;
             alerta += "-Consultorio\n";
             let error = document.getElementById('consul');
-                error.style.border = 'solid #FF6060 2px';
-                error.style.backgroundColor = '#FF8787';
+                error.classList.remove("normal");
+                error.classList.add('warning');
                     error.addEventListener('input',() => {
-                        error.style.border = 'solid 2px';
-                        error.style.backgroundColor = 'white';
-                    })
-        } else {
+                        error.classList.remove('warning');
+                        error.classList.add("normal");
+                        })
+        } if (valConsultorio.test(Consultorio)) {
             let error = document.getElementById('consul');
-            error.addEventListener('input',() => {
-                error.style.border = 'solid 2px';
-                error.style.backroundColor = 'white';
-            })
+                error.classList.add("normal");
         }
         return Consultorio;
     }
@@ -163,39 +146,42 @@ function validarDoctor () {
             validacion = false;
             alerta += "-Correo electronico\n";
             let error = document.getElementById('email');
-                error.style.border = 'solid #FF6060 2px';
-                error.style.backgroundColor = '#FF8787';
+                error.classList.remove("normal");
+                error.classList.add('warning');
                     error.addEventListener('input',() => {
-                        error.style.border = 'solid 2px';
-                        error.style.backgroundColor = 'white';
-                    })
-        } else {
+                        error.classList.remove('warning');
+                        error.classList.add("normal");
+                        })
+        } if (valCorreo.test(Correo)) {
             let error = document.getElementById('email');
-            error.addEventListener('input',() => {
-                error.style.border = 'solid 2px';
-                error.style.backgroundColor = 'white';
-            })
+                error.classList.add("normal");
         }
         return Correo;
     }
     
     validarCorreo()
 
+    //Ultima validación de campos llenos
     if (validacion === false) {
         alert(alerta + "Por favor, ingrese valores validos.");
         } else {
-            
-        const Doctor = {
-            Cedula : validarCedula(),
-            Nombres : validarNombre(),
-            Apellidos : validarApellido(),
-            Especialidad : validarEspecialidad(),
-            Consultorio : validarConsultorio(),
-            Correo : validarCorreo(),
-        };
+            //Creacion del objeto Doctor
+            const Doctor = {
+                Cedula : validarCedula(),
+                Nombres : validarNombre(),
+                Apellidos : validarApellido(),
+                Especialidad : validarEspecialidad(),
+                Consultorio : validarConsultorio(),
+                Correo : validarCorreo(),
+            };
+
+            //Envio de Doctor al arreglo Doctores
             Doctores.push(Doctor);
 
+            //Transformación de Doctores a json_Doctores
             let  jsonDoctores = JSON.stringify(Doctores);
+
+            //Transformación del json_Doctores a objDoctores
             let objDoctores = JSON.parse(jsonDoctores);
             generarLista(objDoctores)
         }
@@ -205,7 +191,10 @@ function validarDoctor () {
 
 //Lista de Doctores
 function generarLista(objDoctores) {
+    //Etiquetas del objDoctores
     let name_col = ['Cedula de Ciudadania', 'Nombres', 'Apellidos', 'Especialidad', 'Consultorio', 'Correo electronico'];
+
+    //Creación de la lista
     let lista_container = document.getElementById("lista");
         lista_container.classList.remove('lista_none');
         lista_container.classList.add('lista_style');
@@ -216,7 +205,7 @@ function generarLista(objDoctores) {
         thead_doctores.classList.add('doc_th')
         tbody_doctores.classList.add('doc_tr')
 
-
+        //Creación de los campos de la lista
         function campos (a) {
             let tr_doctores = document.createElement('tr');
             for (let x in a) {
@@ -228,6 +217,7 @@ function generarLista(objDoctores) {
             thead_doctores.appendChild(tr_doctores);
         }
 
+        //Creación de los registros o tuplas de la lista
         function registros () {
             for (let i in objDoctores) {
                 let lis_doctores = objDoctores[i];
@@ -241,14 +231,15 @@ function generarLista(objDoctores) {
                     }
                     tbody_doctores.appendChild(tupla);
                 }
-                b++;
+                enlista++;
             }
             tabla_doctores.appendChild(thead_doctores);
             tabla_doctores.appendChild(tbody_doctores);
             lista_container.appendChild(tabla_doctores);
         }
 
-        if (b === 0){
+        //Llenado de la lista y eliminación de listas antiguas
+        if (enlista === 0){
             campos(name_col);
             registros();
         } else {
@@ -259,6 +250,7 @@ function generarLista(objDoctores) {
             }
 }
 
+//Reinicio de formulario
 function enviarD () {
     let form = document.querySelector('.doctor');
     form.reset();
