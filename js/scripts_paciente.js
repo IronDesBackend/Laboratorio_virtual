@@ -8,21 +8,12 @@ boton.addEventListener("click", (e) => {
     enviarP();
 });
 
-//Variables del Paciente
-let NameP = document.getElementById('pa_name').value;
-let LnameP = document.getElementById('pa_lastname').value;
-let CedulaP = document.getElementById('pa_cedula').value;
-let EdadP = 
-    new Date().getFullYear() - new Date(document.getElementById('edad').value).getFullYear();
-let TelefonoP = document.getElementById('telefono').value;
-let EspecialidadP = document.getElementById('pa_especialidad').value;
-
+//Variables
 const Pacientes = [];
 let enlista = 0;
 
 //Expresiones regulares
-const valName = /^[A-Za-z]+\s*?[A-Za-z]*?\s*?[A-Za-z]*?\s*?$/g;
-const valLname = /^[A-Za-zÑñÁáÉéÍíÓóÚú]+\s*?[A-Za-zÑñÁáÉéÍíÓóÚú]+\s*?$/g;
+const valName =/^[A-Za-zÑñÁáÉéÍíÓóÚú]+\s*?[A-Za-zÑñÁáÉéÍíÓóÚú]+\s*?[A-Za-zÑñÁáÉéÍíÓóÚú]+\s*?$/g;
 const valCedula = /\d/g;
 const valTel = /^(\d{10})$/g;
 
@@ -32,23 +23,27 @@ function validarPaciente () {
     let validacion = true;
     let alerta = 'Los siguientes parametros no son validos:\r\n';
 
+    //Clase que modifica los inputs en caso de error
+    function addWarning(b) {
+        let error = document.getElementsByClassName('inputs')[b]
+            error.classList.remove("normal");
+            error.classList.add('warning');
+                error.addEventListener('input',() => {
+                    error.classList.remove('warning');
+                    error.classList.add("normal");
+                    })
+    }
+
+    //Validación de inputs
     function validarNombre() {
         let NameP = document.getElementById('pa_name').value;
 
         if (!valName.test(NameP)) {
             validacion = false;
             alerta += "-Nombre\n";
-            let error = document.getElementById('pa_name');
-                error.classList.remove("normal");
-                error.classList.add('warning');
-                    error.addEventListener('input',() => {
-                        error.classList.remove('warning');
-                        error.classList.add("normal");
-                        })
-        } if (valName.test(NameP)) {
-            let error = document.getElementById('pa_name');
-                error.classList.add("normal");
-        }
+            addWarning(0)
+        } 
+        if (valName.test(NameP)) {}
         return NameP;
     }
 
@@ -57,20 +52,12 @@ function validarPaciente () {
     function validarApellido() {
         let LnameP = document.getElementById('pa_lastname').value;
         
-        if (!valLname.test(LnameP)) {
+        if (!valName.test(LnameP)) {
             validacion = false;
             alerta += "-Apellido\n";
-            let error = document.getElementById('pa_lastname');
-                error.classList.remove("normal");
-                error.classList.add('warning');
-                    error.addEventListener('input',() => {
-                        error.classList.remove('warning');
-                        error.classList.add("normal");
-                        })
-        } if (valLname.test(LnameP)) {
-            let error = document.getElementById('pa_name');
-                error.classList.add("normal");
-        }
+            addWarning(1)
+        } 
+        if (valName.test(LnameP)) {}
         return LnameP;
     }
 
@@ -82,17 +69,9 @@ function validarPaciente () {
         if (!valCedula.test(CedulaP)) {
             validacion = false;
             alerta += "-Cédula\n";
-            let error = document.getElementById('pa_cedula');
-                error.classList.remove("normal");
-                error.classList.add('warning');
-                    error.addEventListener('input',() => {
-                        error.classList.remove('warning');
-                        error.classList.add("normal");
-                        })
-        } if (valCedula.test(CedulaP)) {
-            let error = document.getElementById('pa_name');
-                error.classList.add("normal");
-        }
+            addWarning(2)
+        } 
+        if (valCedula.test(CedulaP)) {}
         return CedulaP;
     }
 
@@ -106,13 +85,7 @@ function validarPaciente () {
             EdadP = 0;
             validacion = false;
             alerta += "-Fecha de nacimiento\n";
-            let error = document.getElementById('edad');
-                error.classList.remove("normal");
-                error.classList.add('warning');
-                    error.addEventListener('input',() => {
-                        error.classList.remove('warning');
-                        error.classList.add("normal");
-                        });
+            addWarning(3)
         }
         return EdadP;
     }
@@ -125,17 +98,9 @@ function validarPaciente () {
         if (!valTel.test(TelefonoP)) {
             validacion = false;
             alerta += "-Telefono\n";
-            let error = document.getElementById('telefono');
-                error.classList.remove("normal");
-                error.classList.add('warning');
-                    error.addEventListener('input',() => {
-                        error.classList.remove('warning');
-                        error.classList.add("normal");
-                        })
-        } if (valTel.test(TelefonoP)) {
-            let error = document.getElementById('pa_name');
-                error.classList.add("normal");
-        }
+            addWarning(4)
+        } 
+        if (valTel.test(TelefonoP)) {}
         return TelefonoP;
     }
 
@@ -147,13 +112,7 @@ function validarPaciente () {
         if (EspecialidadP === 'Especialidad') {
             validacion = false;
             alerta += "-Especialidad\n";
-            let error = document.getElementById('pa_especialidad');
-                error.classList.remove("normal");
-                error.classList.add('warning');
-                    error.addEventListener('input',() => {
-                        error.classList.remove('warning');
-                        error.classList.add("normal");
-                        })
+            addWarning(5)
         }
         return EspecialidadP;
     }
@@ -164,6 +123,7 @@ function validarPaciente () {
     if (validacion === false) {
         alert(alerta + "Por favor, ingrese valores validos.");
         } else {
+            alert ('Información enviada')
             //Creacion del objeto Persona
             const Persona = {
                 Cedula : validarCedula(),
