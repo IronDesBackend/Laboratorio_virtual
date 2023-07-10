@@ -133,7 +133,6 @@ function validarPaciente () {
                 Telefono : validarTelefono(),
                 Especialidad : validarEspecialidad()
             };
-
             //Envio de Persona al arreglo Pacientes
             Pacientes.push(Persona);
     

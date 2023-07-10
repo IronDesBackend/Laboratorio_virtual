@@ -13,7 +13,7 @@ const Doctores = [];
 let enlista = 0;
 
 //Expresiones regulares
-const valName = /^[A-Za-z]+\s*?[A-Za-z]*?\s*?[A-Za-z]*?\s*?$/g;
+const valName = /^[A-Za-zÑñÁáÉéÍíÓóÚú]+\s*?[A-Za-zÑñÁáÉéÍíÓóÚú]+\s*?[A-Za-zÑñÁáÉéÍíÓóÚú]+\s*?$/g;
 const valCedula = /^\d$/g;
 const valCorreo = /^\S+@\S+\.\S+$/;
 const valConsultorio = /^(\d{1,3})$/g;
